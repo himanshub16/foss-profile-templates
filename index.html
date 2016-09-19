@@ -710,7 +710,35 @@
 	var emailLinks = document.getElementsByClassName('data-email');
 
 
+	function resetModal() {
+		$("#myModalLabel").text('');
+		$("#myModalDesignation").text('');
+		$("#modal-thumbnail").attr('src', '');
+
+		$(".modal-header .data-link-facebook").attr("href", '');
+		$(".modal-header .data-twitter").attr("href", '');
+		$(".modal-header .data-google-plus").attr("href", '');
+		$(".modal-header .data-linkedin").attr("href", '');
+		$(".modal-header .data-github").attr("href", '');
+		$(".modal-header .data-blog").attr("href", '');
+		$(".modal-header .data-email").attr("href", "");
+
+
+		$("#about-me").html('');
+		$("#knows-about").html(createLabelElems(''));
+		$("#showoff-1 h4").text('');
+		$("#showoff-1 a").attr("href", '');
+		$("#showoff-1 p").html('');
+		$("#showoff-2 h4").text('');
+		$("#showoff-2 a").attr("href", '');
+		$("#showoff-2 p").html('');
+		$("#github-view-more").attr('href', '');
+		console.log('modal cleared');
+	}
+
 	function manipulateModal(i) {
+		setTimeout(resetModal(), 2);
+		
 		var labelClassesToToggle = [ 'label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger' ];
 		var loopCounter = 0;
 		$("#myModalLabel").text(person[i]["data-name"]);
